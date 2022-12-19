@@ -11,6 +11,10 @@ const port = process.env.PORT || 3000
 app.use(bodyParser.json(), cors())
 app.options('*', cors())
 
+app.get('/', (req, res) => {
+  res.sendStatus(200)
+})
+
 app.post('/', (req, res) => {
 
   const iat = Math.round(new Date().getTime() / 1000) - 30;
